@@ -397,11 +397,111 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void exchange()
+    void exchange(int player)
     {
+        bool pass = false;
+        switch (player)
+        {
+            case 1:
+                if (P1_MP >= 20)
+                {
+                    MainController.P1_MP -= 20;
+                    pass = true;
+                }
+                break;
+
+            case 2:
+                if (P2_MP >= 20)
+                {
+                    MainController.P2_MP -= 20;
+                    pass = true;
+                }
+                break;
+        }
+
+        if (pass)
+        {
+            int tmp_int;
+            float tmp_float;
+            bool tmp_bool;
+            int?[] tmp_skillset = new int?[3];
+
+            tmp_int = MainController.P1_MP;
+            MainController.P1_MP = MainController.P2_MP;
+            MainController.P2_MP = tmp_int;
+
+            tmp_int = MainController.P1_avoid;
+            MainController.P1_avoid = MainController.P2_avoid;
+            MainController.P2_avoid = tmp_int;
+
+            tmp_float = MainController.P1_timer;
+            MainController.P1_timer = MainController.P2_timer;
+            MainController.P2_timer = tmp_float;
+
+            tmp_float = MainController.P1_speed;
+            MainController.P1_speed = MainController.P2_speed;
+            MainController.P2_speed = tmp_float;
+
+            tmp_bool = MainController.P1_logic;
+            MainController.P1_logic = MainController.P2_logic;
+            MainController.P2_logic = tmp_bool;
+
+            tmp_skillset = MainController.P1_skillset;
+            MainController.P1_skillset = MainController.P2_skillset;
+            MainController.P2_skillset = tmp_skillset;
+        }
     }
 
-    void initialize()
+    void initialize(int player)
     {
+        switch (player)
+        {
+            case 1:
+                if (P1_MP >= 20)
+                {
+                    MainController.P1_timer = 240;
+                    MainController.P1_MP = 20;
+
+                    //int specskill = Random.Range(1, 10);
+                    //p1_skill_1.GetComponent<Image>().sprite = skills[specskill];
+                    //p1_skill_1.SetActive(true);
+                    //player1skill[0] = specskill;
+
+                    //specskill = Random.Range(1, 10);
+                    //p1_skill_2.GetComponent<Image>().sprite = skills[specskill];
+                    //p1_skill_2.SetActive(true);
+                    //player1skill[1] = specskill;
+
+                    //specskill = Random.Range(1, 10);
+                    //p1_skill_3.GetComponent<Image>().sprite = skills[specskill];
+                    //p1_skill_3.SetActive(true);
+                    //player1skill[2] = specskill;
+                }
+                break;
+
+            case 2:
+                if (P2_MP >= 20)
+                {
+                    MainController.P2_timer = 240;
+                    MainController.P2_MP = 20;
+
+                    //int specskill = Random.Range(1, 10);
+                    //p1_skill_1.GetComponent<Image>().sprite = skills[specskill];
+                    //p1_skill_1.SetActive(true);
+                    //player1skill[0] = specskill;
+
+                    //specskill = Random.Range(1, 10);
+                    //p1_skill_2.GetComponent<Image>().sprite = skills[specskill];
+                    //p1_skill_2.SetActive(true);
+                    //player1skill[1] = specskill;
+
+                    //specskill = Random.Range(1, 10);
+                    //p1_skill_3.GetComponent<Image>().sprite = skills[specskill];
+                    //p1_skill_3.SetActive(true);
+                    //player1skill[2] = specskill;
+                }
+                break;
+
+        }
     }
 }

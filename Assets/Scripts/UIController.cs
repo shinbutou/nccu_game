@@ -23,10 +23,6 @@ public class UIController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            int test = Random.Range(0, 2);
-            Debug.Log(test);
-        }
+
     }
 }
