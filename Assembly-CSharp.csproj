@@ -66,7 +66,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\CardController.cs" />
     <Compile Include="Assets\Scripts\MainController.cs" />
-    <Compile Include="Assets\Scripts\MessageController.cs" />
     <Compile Include="Assets\Scripts\SkillLibrary.cs" />
     <Compile Include="Assets\Scripts\SoundController.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />

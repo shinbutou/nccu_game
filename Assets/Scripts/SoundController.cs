@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
     //Background Music
-    public AudioSource stage_0, stage_1, stage_2;
+    public AudioSource start, advanced, final;
 
     //Background Sound Effect
     public AudioSource ticking;
@@ -16,32 +16,84 @@ public class SoundController : MonoBehaviour
     //Skills Sound Effect
     public AudioSource basic, chic, super;
 
-    void Start(){}
+    //Synchronization
+    private float P1_timer;
+    private float P2_timer;
+
+    //Monitor
+    private float previous;
+    private float current;
+
+    void Start()
+    {
+        start.Play();
+    }
 
     void Update()
-    {}
+    {
+        //Background Music Control
+        P1_timer = MainController.P1_timer;
+        P2_timer = MainController.P2_timer;
+        current = Mathf.Min(P1_timer, P2_timer);
 
-    void correct()
+        if (Mathf.Abs(current - previous) > 1)
+        {
+            BGM_manager(current);
+        }
+
+        if ((int)current - (int)previous == 1 && (current == 120 || current == 40))
+        {
+            BGM_manager(current);
+        }
+
+        previous = Mathf.Min(P1_timer, P2_timer);
+        // Personally speaking, I would call this pure brilliance.
+    }
+
+    private void BGM_manager(float i)
+    {
+        if (i >= 120)
+        {
+            start.Play();
+            advanced.Stop();
+            final.Stop();
+        }
+        else if (i >= 40)
+        {
+            start.Stop();
+            advanced.Play();
+            final.Stop();
+        }
+        else
+        {
+            start.Stop();
+            advanced.Stop();
+            final.Play();
+        }
+    }
+
+    //Sound Effects
+    public void Correct()
     {
         positive.Play();
     }
 
-    void wrong()
+    public void Wrong()
     {
         negative.Play();
     }
 
-    void basic_skill()
+    public void Basic_skill()
     {
         basic.Play();
     }
 
-    void chic_skill()
+    public void Chic_skill()
     {
         chic.Play();
     }
 
-    public void super_skill()
+    public void Super_skill()
     {
         super.Play();
     }

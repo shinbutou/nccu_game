@@ -28,16 +28,16 @@ public class MainController : MonoBehaviour
     public static int P1_avoid = 0;
     public static int P2_avoid = 0;
 
-    //Deck Initialization
-    int[][] Deck = new int[65][];
-
     //Scripts Inclusion
-    public SoundController SoundEffect;
+    public CardController TheDeck;
+    public SoundController Sounds;
     public SkillLibrary Skills;
 
     void Start()
     {
-        shuffled_deck();
+        TheDeck = GameObject.FindWithTag("GameController").GetComponent<CardController>();
+        Sounds = GameObject.FindWithTag("GameController").GetComponent<SoundController>();
+        Skills = GameObject.FindWithTag("GameController").GetComponent<SkillLibrary>();
     }
 
     void Update()
@@ -66,16 +66,41 @@ public class MainController : MonoBehaviour
             gameover = true;
             winner = 1;
         }
-    }
 
-    void Game(int type, int value)
-    {
-        if (type == 0)
+        if (Input.GetKeyDown(KeyCode.G))
         {
-            
+            Sounds.Basic_skill();
+        }
+
+        //Background Music
+        /*
+        int timer = Mathf.Max((int)P1_timer, (int)P2_timer);
+        if (timer >= 120)
+        {
+            Sounds.start_stage();
+        }
+        else if (timer >= 40)
+        {
+            Sounds.advanced_stage();
         }
         else
-        {}
+        {
+            Sounds.final_stage();
+        }
+        */
+    }
+
+    public void Game(int[][] Deck)
+    {
+        for (int i = 0; i < Deck.Length; i++)
+        {
+            if (Deck[i][0] == 0)//Skill Round
+            {
+            }
+            else//MP Round
+            {
+            }
+        }
     }
 
     void Skill(int skill_index, int player)
@@ -83,151 +108,83 @@ public class MainController : MonoBehaviour
         //Sound Effect
         if (skill_index <= 8)
         {
-            SoundEffect.basic_skill();
+            Sounds.Basic_skill();
         }
         else if (skill_index <= 16)
         {
-            SoundEffect.chic_skill();
+            Sounds.Chic_skill();
         }
         else
         {
-            SoundEffect.super_skill();
+            Sounds.Super_skill();
         }
 
         //Effects
         switch (skill_index)
         {
             case 0:
-                Skills.dispel(player);
+                Skills.Dispel(player);
                 break;
             case 1:
-                Skills.safeguard(player);
+                Skills.Safeguard(player);
                 break;
             case 2:
-                Skills.basic_enhancer(player);
+                Skills.Basic_enhancer(player);
                 break;
             case 3:
-                Skills.chic_enhancer(player);
+                Skills.Chic_enhancer(player);
                 break;
             case 4:
-                Skills.super_enhancer(player);
+                Skills.Super_enhancer(player);
                 break;
             case 5:
-                Skills.basic_blockade(player);
+                Skills.Basic_blockade(player);
                 break;
             case 6:
-                Skills.chic_blockade(player);
+                Skills.Chic_blockade(player);
                 break;
             case 7:
-                Skills.super_blockade(player);
+                Skills.Super_blockade(player);
                 break;
             case 8:
-                Skills.basic_surprise();
+                Skills.Basic_surprise();
                 break;
             case 9:
-                Skills.chic_surprise();
+                Skills.Chic_surprise();
                 break;
             case 10:
-                Skills.super_surprise();
+                Skills.Super_surprise();
                 break;
             case 11:
-                Skills.lightning();
+                Skills.Lightning();
                 break;
             case 12:
-                Skills.snatcher();
+                Skills.Snatcher();
                 break;
             case 13:
-                Skills.steroid(player);
+                Skills.Steroid(player);
                 break;
             case 14:
-                Skills.toxicate(player);
+                Skills.Toxicate(player);
                 break;
             case 15:
-                Skills.confusion(player);
+                Skills.Confusion(player);
                 break;
             case 16:
-                Skills.basic_speeder(player);
+                Skills.Basic_speeder(player);
                 break;
             case 17:
-                Skills.chic_speeder(player);
+                Skills.Chic_speeder(player);
                 break;
             case 18:
-                Skills.super_speeder(player);
+                Skills.Super_speeder(player);
                 break;
             case 19:
-                Skills.exchange(player);
+                Skills.Exchange(player);
                 break;
             case 20:
-                Skills.initialize(player);
+                Skills.Initialize(player);
                 break;
-        }
-    }
-
-    void shuffled_deck()
-    {
-        //Construction
-        for (int i = 0; i < 65; i++)
-        {
-            Deck[i] = new int[3];
-            if (i <= 12)
-            {
-                Deck[i][0]= 1; //Club
-                Deck[i][1] = i;
-                Deck[i][2] = 0; //Blue
-                Debug.Log(Deck[i][0].ToString() + ", " + Deck[i][1].ToString() + ", " + Deck[i][2].ToString());
-            }
-            else if (i <= 25)
-            {
-                Deck[i][0] = 2; //Diamond
-                Deck[i][1] = i - 12;
-                Deck[i][2] = 1; //Red
-                //Debug.Log(Deck[i][0].ToString() + ", " + Deck[i][1].ToString() + ", " + Deck[i][2].ToString());
-            }
-            else if (i <= 38)
-            {
-                Deck[i][0] = 3; //Heart
-                Deck[i][1] = i - 25;
-                Deck[i][2] = 0; //Red
-                //Debug.Log(Deck[i][0].ToString() + ", " + Deck[i][1].ToString() + ", " + Deck[i][2].ToString());
-            }
-            else if (i <= 51)
-            {
-                Deck[i][0] = 4; //Spade
-                Deck[i][1] = i - 38; //Value
-                Deck[i][2] = 0; //Blue
-                //Debug.Log(Deck[i][0].ToString() + ", " + Deck[i][1].ToString() + ", " + Deck[i][2].ToString());
-            }
-            else
-            {
-                Deck[i][0] = 0; //Joker
-                Deck[i][1] = 0;
-                if (i % 2 == 0)
-                {
-                    Deck[i][2] = 0; //Blue
-                }
-                else
-                {
-                    Deck[i][2] = 1; //Red
-                }
-                //Debug.Log(Deck[i][0].ToString() + ", " + Deck[i][1].ToString() + ", " + Deck[i][2].ToString());
-            }
-        }
-
-        //Shuffle
-        // No clue why this didn't work
-        int[] spare = new int[3];
-        for (int i = 0; i < Deck.Length; i++)
-        {
-            spare[0] = Deck[i][0];
-            spare[1] = Deck[i][1];
-            spare[2] = Deck[i][2];
-            int j = Random.Range(i, Deck.Length);
-            Deck[i][0] = Deck[j][0];
-            Deck[i][1] = Deck[j][1];
-            Deck[i][2] = Deck[j][2];
-            Deck[j][0] = spare[0];
-            Deck[j][1] = spare[1];
-            Deck[j][2] = spare[2];
         }
     }
 }

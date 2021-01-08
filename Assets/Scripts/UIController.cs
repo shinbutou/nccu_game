@@ -25,4 +25,22 @@ public class UIController : MonoBehaviour
     {
 
     }
+
+    /*
+    public void timer_conversion(Text m_ClockText, float m_Timer)
+    {
+        int m_Minute = 0;
+        int m_Second = 0;
+        m_Second = (int)m_Timer;
+
+        if (m_Second > 59.0f)
+        {
+            m_Minute = (m_Second / 60);
+            m_Second = (int)(m_Timer - (m_Minute * 60));
+        }
+
+        m_Minute = (int)(m_Timer / 60);
+        m_ClockText.text = string.Format("{0:d2}:{1:d2}", m_Minute, m_Second);
+    }
+    */
 }
