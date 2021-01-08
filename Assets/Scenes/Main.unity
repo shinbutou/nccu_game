@@ -266,18 +266,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 137058835}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6076e292032ad48b5b3d3d50b76c27c6, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e55f97472ad64e36bcf9f9ffa00e5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stage0: {fileID: 1771707447}
-  stage1: {fileID: 1654397489}
-  stage2: {fileID: 1929121552}
-  positive: {fileID: 1475276877}
-  negative: {fileID: 556555423}
-  basicCast: {fileID: 778912275}
-  chicCast: {fileID: 921859148}
-  superCast: {fileID: 773726794}
-  tikTok: {fileID: 273487069}
+  stage_0: {fileID: 0}
+  stage_1: {fileID: 0}
+  stage_2: {fileID: 0}
+  ticking: {fileID: 0}
+  positive: {fileID: 0}
+  negative: {fileID: 0}
+  basic: {fileID: 0}
+  chic: {fileID: 0}
+  super: {fileID: 0}
 --- !u!1 &147090483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,6 +1502,103 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &699046908
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699046909}
+  - component: {fileID: 699046910}
+  m_Layer: 0
+  m_Name: Deck Dealer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &699046909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699046908}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1677205998}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &699046910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699046908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd390314ca8e0419189b761d0271c8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  C_A: {fileID: 0}
+  C_2: {fileID: 0}
+  C_3: {fileID: 0}
+  C_4: {fileID: 0}
+  C_5: {fileID: 0}
+  C_6: {fileID: 0}
+  C_7: {fileID: 0}
+  C_8: {fileID: 0}
+  C_9: {fileID: 0}
+  C_10: {fileID: 0}
+  C_J: {fileID: 0}
+  C_Q: {fileID: 0}
+  C_K: {fileID: 0}
+  D_A: {fileID: 0}
+  D_2: {fileID: 0}
+  D_3: {fileID: 0}
+  D_4: {fileID: 0}
+  D_5: {fileID: 0}
+  D_6: {fileID: 0}
+  D_7: {fileID: 0}
+  D_8: {fileID: 0}
+  D_9: {fileID: 0}
+  D_10: {fileID: 0}
+  D_J: {fileID: 0}
+  D_Q: {fileID: 0}
+  D_K: {fileID: 0}
+  H_A: {fileID: 0}
+  H_2: {fileID: 0}
+  H_3: {fileID: 0}
+  H_4: {fileID: 0}
+  H_5: {fileID: 0}
+  H_6: {fileID: 0}
+  H_7: {fileID: 0}
+  H_8: {fileID: 0}
+  H_9: {fileID: 0}
+  H_10: {fileID: 0}
+  H_J: {fileID: 0}
+  H_Q: {fileID: 0}
+  H_K: {fileID: 0}
+  S_A: {fileID: 0}
+  S_2: {fileID: 0}
+  S_3: {fileID: 0}
+  S_4: {fileID: 0}
+  S_5: {fileID: 0}
+  S_6: {fileID: 0}
+  S_7: {fileID: 0}
+  S_8: {fileID: 0}
+  S_9: {fileID: 0}
+  S_10: {fileID: 0}
+  S_J: {fileID: 0}
+  S_Q: {fileID: 0}
+  S_K: {fileID: 0}
+  J_0: {fileID: 0}
+  J_1: {fileID: 0}
 --- !u!1 &773726792
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,7 +3436,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1677205998}
+  - component: {fileID: 1677206001}
   - component: {fileID: 1677205999}
+  - component: {fileID: 1677206000}
   m_Layer: 0
   m_Name: Game Master
   m_TagString: Untagged
@@ -3359,6 +3458,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 137058836}
+  - {fileID: 699046909}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3371,133 +3471,46 @@ MonoBehaviour:
   m_GameObject: {fileID: 1677205997}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a844d3da39ef49a38143cc9143e1f4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0837b390269e6476ca4397a7584fa84a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  first: {fileID: 0}
-  cards: 
-  poker: []
-  timebar1: {fileID: 0}
-  timebar2: {fileID: 0}
-  circle1: {fileID: 0}
-  circle2: {fileID: 0}
-  cross1: {fileID: 0}
-  cross2: {fileID: 0}
-  p1s1: {fileID: 0}
-  p1s2: {fileID: 0}
-  p1s3: {fileID: 0}
-  p2s1: {fileID: 0}
-  p2s2: {fileID: 0}
-  p2s3: {fileID: 0}
-  counter1: {fileID: 0}
-  counter2: {fileID: 0}
-  Q1: []
-  Q2: []
-  s1: {fileID: 0}
-  s2: {fileID: 0}
-  cardnum: {fileID: 0}
-  p1_skill_1: {fileID: 0}
-  p1_skill_2: {fileID: 0}
-  p1_skill_3: {fileID: 0}
-  p2_skill_1: {fileID: 0}
-  p2_skill_2: {fileID: 0}
-  p2_skill_3: {fileID: 0}
-  showing_card: {fileID: 0}
-  p1_state_1: {fileID: 0}
-  p1_state_2: {fileID: 0}
-  p1_state_3: {fileID: 0}
-  p2_state_1: {fileID: 0}
-  p2_state_2: {fileID: 0}
-  p2_state_3: {fileID: 0}
-  skill_1_picture: {fileID: 0}
-  skill_2_picture: {fileID: 0}
-  skill_3_picture: {fileID: 0}
-  skill_4_picture: {fileID: 0}
-  skill_5_picture: {fileID: 0}
-  skill_6_picture: {fileID: 0}
-  skill_7_picture: {fileID: 0}
-  skill_8_picture: {fileID: 0}
-  skill_9_picture: {fileID: 0}
-  skill_10_picture: {fileID: 0}
-  skill_11_picture: {fileID: 0}
-  skill_12_picture: {fileID: 0}
-  skill_13_picture: {fileID: 0}
-  skill_14_picture: {fileID: 0}
-  skill_15_picture: {fileID: 0}
-  skill_16_picture: {fileID: 0}
-  skill_17_picture: {fileID: 0}
-  skill_18_picture: {fileID: 0}
-  skill_19_picture: {fileID: 0}
-  skill_20_picture: {fileID: 0}
-  skill_21_picture: {fileID: 0}
-  state_1: {fileID: 0}
-  card1: {fileID: 0}
-  card2: {fileID: 0}
-  card3: {fileID: 0}
-  card4: {fileID: 0}
-  card5: {fileID: 0}
-  card6: {fileID: 0}
-  card7: {fileID: 0}
-  card8: {fileID: 0}
-  card9: {fileID: 0}
-  card10: {fileID: 0}
-  card11: {fileID: 0}
-  card12: {fileID: 0}
-  card13: {fileID: 0}
-  card14: {fileID: 0}
-  card15: {fileID: 0}
-  card16: {fileID: 0}
-  card17: {fileID: 0}
-  card18: {fileID: 0}
-  card19: {fileID: 0}
-  card20: {fileID: 0}
-  card21: {fileID: 0}
-  card22: {fileID: 0}
-  card23: {fileID: 0}
-  card24: {fileID: 0}
-  card25: {fileID: 0}
-  card26: {fileID: 0}
-  card27: {fileID: 0}
-  card28: {fileID: 0}
-  card29: {fileID: 0}
-  card30: {fileID: 0}
-  card31: {fileID: 0}
-  card32: {fileID: 0}
-  card33: {fileID: 0}
-  card34: {fileID: 0}
-  card35: {fileID: 0}
-  card36: {fileID: 0}
-  card37: {fileID: 0}
-  card38: {fileID: 0}
-  card39: {fileID: 0}
-  card40: {fileID: 0}
-  card41: {fileID: 0}
-  card42: {fileID: 0}
-  card43: {fileID: 0}
-  card44: {fileID: 0}
-  card45: {fileID: 0}
-  card46: {fileID: 0}
-  card47: {fileID: 0}
-  card48: {fileID: 0}
-  card49: {fileID: 0}
-  card50: {fileID: 0}
-  card51: {fileID: 0}
-  card52: {fileID: 0}
-  card53: {fileID: 0}
-  card54: {fileID: 0}
-  card55: {fileID: 0}
-  card56: {fileID: 0}
-  card57: {fileID: 0}
-  card58: {fileID: 0}
-  card59: {fileID: 0}
-  card60: {fileID: 0}
-  haswinner: 0
-  winner_player: 0
-  correct: {fileID: 0}
-  wrong: {fileID: 0}
-  s_ele: {fileID: 0}
-  s_adv: {fileID: 0}
-  s_super: {fileID: 0}
+  P1_timer: 180
+  P2_timer: 180
+  P1_speed: 1
+  P2_speed: 1
+  P1_MP: 10
+  P2_MP: 10
+  P1_logic: 0
+  P2_logic: 0
+  P1_avoid: 0
+  P2_avoid: 0
+--- !u!114 &1677206000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677205997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b41079d86dcf492bac6e7eb0f95d5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1677206001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677205997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d831b4a8101f4b108f1264da522d2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  gameover: 0
+  winner: 0
 --- !u!1 &1723799958
 GameObject:
   m_ObjectHideFlags: 0
