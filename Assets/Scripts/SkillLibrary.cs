@@ -33,7 +33,7 @@ public class SkillLibrary : MonoBehaviour
         P2_avoid = MainController.P2_avoid;
     }
 
-    void dispel(int player)
+    public void dispel(int player)
     {
         switch (player)
         {
@@ -63,7 +63,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void safeguard(int player)
+    public void safeguard(int player)
     {
         int guard_random = Random.Range(0, 2);
         switch (player)
@@ -91,7 +91,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void basic_enhancer(int player)
+    public void basic_enhancer(int player)
     {
         switch (player)
         {
@@ -113,7 +113,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void chic_enhancer(int player)
+    public void chic_enhancer(int player)
     {
         switch (player)
         {
@@ -135,7 +135,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void super_enhancer(int player)
+    public void super_enhancer(int player)
     {
         switch (player)
         {
@@ -157,7 +157,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void basic_blockade(int player)
+    public void basic_blockade(int player)
     {
         switch (player)
         {
@@ -179,7 +179,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void chic_blockade(int player)
+    public void chic_blockade(int player)
     {
         switch (player)
         {
@@ -201,7 +201,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void super_blockade(int player)
+    public void super_blockade(int player)
     {
         switch (player)
         {
@@ -223,27 +223,27 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void basic_surprise()
+    public void basic_surprise()
     {
     }
 
-    void chic_surprise()
+    public void chic_surprise()
     {
     }
 
-    void super_surprise()
+    public void super_surprise()
     {
     }
 
-    void lightning()
+    public void lightning()
     {
     }
 
-    void snatcher()
+    public void snatcher()
     {
     }
 
-    void steroid(int player)
+    public void steroid(int player)
     {
         switch (player)
         {
@@ -265,7 +265,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void toxicate(int player)
+    public void toxicate(int player)
     {
         switch (player)
         {
@@ -287,7 +287,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void confusion(int player)
+    public void confusion(int player)
     {
         switch (player)
         {
@@ -325,7 +325,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void basic_speeder(int player)
+    public void basic_speeder(int player)
     {
         switch (player)
         {
@@ -349,7 +349,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void chic_speeder(int player)
+    public void chic_speeder(int player)
     {
         switch (player)
         {
@@ -373,7 +373,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void super_speeder(int player)
+    public void super_speeder(int player)
     {
         switch (player)
         {
@@ -397,7 +397,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void exchange(int player)
+    public void exchange(int player)
     {
         bool pass = false;
         switch (player)
@@ -452,7 +452,7 @@ public class SkillLibrary : MonoBehaviour
         }
     }
 
-    void initialize(int player)
+    public void initialize(int player)
     {
         switch (player)
         {

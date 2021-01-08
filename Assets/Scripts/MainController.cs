@@ -21,8 +21,8 @@ public class MainController : MonoBehaviour
     public static bool P2_logic = true;
 
     //Players Skillboxes
-    int?[] P1_skillset = new int?[3];
-    int?[] P2_skillset = new int?[3];
+    public static int?[] P1_skillset = new int?[3];
+    public static int?[] P2_skillset = new int?[3];
 
     //Players Avoidability
     public static int P1_avoid = 0;
@@ -30,6 +30,10 @@ public class MainController : MonoBehaviour
 
     //Deck Initialization
     int[][] Deck = new int[65][];
+
+    //Scripts Inclusion
+    public SoundController SoundEffect;
+    public SkillLibrary Skills;
 
     void Start()
     {
@@ -72,6 +76,91 @@ public class MainController : MonoBehaviour
         }
         else
         {}
+    }
+
+    void Skill(int skill_index, int player)
+    {
+        //Sound Effect
+        if (skill_index <= 8)
+        {
+            SoundEffect.basic_skill();
+        }
+        else if (skill_index <= 16)
+        {
+            SoundEffect.chic_skill();
+        }
+        else
+        {
+            SoundEffect.super_skill();
+        }
+
+        //Effects
+        switch (skill_index)
+        {
+            case 0:
+                Skills.dispel(player);
+                break;
+            case 1:
+                Skills.safeguard(player);
+                break;
+            case 2:
+                Skills.basic_enhancer(player);
+                break;
+            case 3:
+                Skills.chic_enhancer(player);
+                break;
+            case 4:
+                Skills.super_enhancer(player);
+                break;
+            case 5:
+                Skills.basic_blockade(player);
+                break;
+            case 6:
+                Skills.chic_blockade(player);
+                break;
+            case 7:
+                Skills.super_blockade(player);
+                break;
+            case 8:
+                Skills.basic_surprise();
+                break;
+            case 9:
+                Skills.chic_surprise();
+                break;
+            case 10:
+                Skills.super_surprise();
+                break;
+            case 11:
+                Skills.lightning();
+                break;
+            case 12:
+                Skills.snatcher();
+                break;
+            case 13:
+                Skills.steroid(player);
+                break;
+            case 14:
+                Skills.toxicate(player);
+                break;
+            case 15:
+                Skills.confusion(player);
+                break;
+            case 16:
+                Skills.basic_speeder(player);
+                break;
+            case 17:
+                Skills.chic_speeder(player);
+                break;
+            case 18:
+                Skills.super_speeder(player);
+                break;
+            case 19:
+                Skills.exchange(player);
+                break;
+            case 20:
+                Skills.initialize(player);
+                break;
+        }
     }
 
     void shuffled_deck()

@@ -41,7 +41,7 @@ public class SoundController : MonoBehaviour
         chic.Play();
     }
 
-    void super_skill()
+    public void super_skill()
     {
         super.Play();
     }
