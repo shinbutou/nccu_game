@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{F14B2316-33AB-C17F-C9B4-6BF34381BF8F}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainController.cs">
+    <Files>
+      <File FileName="Assets/Scripts/MusicController.cs" Line="22" Column="33" />
+      <File FileName="Assets/Scripts/MainController.cs" Line="36" Column="26" />
+      <File FileName="Assets/Scripts/TitleController.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="2020 Hack Muffin" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="MainController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b07fc0cd-5de2-4299-ae8a-8c9d43657395" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
