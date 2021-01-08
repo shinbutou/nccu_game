@@ -21,7 +21,13 @@ public class CardController : MonoBehaviour
     void Start()
     {
         Main = GameObject.FindWithTag("GameController").GetComponent<MainController>();
+        Open();
+    }
 
+    void Update(){}
+
+    public void Open()
+    {
         for (int i = 0; i < 65; i++)
         {
             //Construction
@@ -73,9 +79,7 @@ public class CardController : MonoBehaviour
         Main.Game(Deck);
     }
 
-    void Update(){}
-
-    void PrintDeck(int[][] cards)
+    private void PrintDeck(int[][] cards)
     {
         for (int i = 0; i < cards.Length; i++)
         {
@@ -90,7 +94,7 @@ public class CardController : MonoBehaviour
     }
     */
 
-    void Shuffle(int[][] cards)
+    private void Shuffle(int[][] cards)
     {
         for (int i = 0; i < cards.Length; i++)
         {

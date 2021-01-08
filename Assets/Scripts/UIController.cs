@@ -12,9 +12,10 @@ public class UIController : MonoBehaviour
     public GameObject P2_wrong;
 
     //Player Message 
-    public GameObject P1_timebar;
-    public GameObject P2_timebar;
-
+    public GameObject P1_HPbar;
+    public GameObject P2_HPbar;
+    private float P1_HP;
+    private float P2_HP;
 
     void Start()
     {

@@ -33,6 +33,12 @@ public class MainController : MonoBehaviour
     public SoundController Sounds;
     public SkillLibrary Skills;
 
+    //Rounds Management
+    private bool P1_attempt = false;
+    private bool P2_attempt = false;
+    private bool round_winner = false;
+    private bool magic = true;//Skill Authorization
+
     void Start()
     {
         TheDeck = GameObject.FindWithTag("GameController").GetComponent<CardController>();
@@ -66,44 +72,89 @@ public class MainController : MonoBehaviour
             gameover = true;
             winner = 1;
         }
-
-        if (Input.GetKeyDown(KeyCode.G))
+        //Players Input
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            Sounds.Basic_skill();
+            Skill_authorizer(0);
         }
-
-        //Background Music
-        /*
-        int timer = Mathf.Max((int)P1_timer, (int)P2_timer);
-        if (timer >= 120)
+        else if (Input.GetKeyDown(KeyCode.P))
         {
-            Sounds.start_stage();
+            Skill_authorizer(1);
         }
-        else if (timer >= 40)
+        else if (Input.GetKeyDown(KeyCode.LeftBracket))
         {
-            Sounds.advanced_stage();
+            Skill_authorizer(4);
         }
-        else
+        else if (Input.GetKeyDown(KeyCode.W))
         {
-            Sounds.final_stage();
+            Skill_authorizer(2);
         }
-        */
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            Skill_authorizer(3);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightBracket))
+        {
+            Skill_authorizer(5);
+        }
+        else if (Input.GetKeyDown(KeyCode.Period))
+        {
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+        }
+        else if (Input.GetKeyDown(KeyCode.X))
+        {
+        }
+        else if (Input.GetKeyDown(KeyCode.Slash))
+        {
+        }
     }
 
     public void Game(int[][] Deck)
     {
+        //Finish the game once occur
+        if (gameover)
+        {
+        }
+
         for (int i = 0; i < Deck.Length; i++)
         {
             if (Deck[i][0] == 0)//Skill Round
             {
+                magic = false;
+                Skill_round(Deck[i][2]);// For skill rounds switch control and dismiss skill casts
             }
             else//MP Round
             {
+                magic = true;
+                int question = Random.Range(0, 3);
+            }
+        }
+        //TheDeck.Open();//Reshuffle if all cards are cast
+    }
+
+    private void Skill_round(int card)
+    {
+        //TheDeck;//Deal the card
+    }
+
+    private void Skill_authorizer(int key)
+    {
+        while (magic)
+        {
+            if (key <= 2)
+            {
+                Skill(key, 1);
+            }
+            else
+            {
+                Skill(key, 2);
             }
         }
     }
 
-    void Skill(int skill_index, int player)
+    private void Skill(int skill_index, int player)
     {
         //Sound Effect
         if (skill_index <= 8)
